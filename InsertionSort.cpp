@@ -5,7 +5,9 @@ int main()
 {
     vector<int> v;
     int n, a, key;
+    cout<<"Enter Array Size: ";
     cin>>n;
+    cout<<"Enter Array Element: ";
     for (int i = 0; i < n; i++)
     {
         cin>>a;
@@ -23,6 +25,7 @@ int main()
             }
         }
     }
+    cout<<"Sorting Array Element: ";
     for (int i = 0; i < n; i++)
         cout << v[i]<<" ";
     return 0;
