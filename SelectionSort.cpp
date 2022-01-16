@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
-    vector <int> array;
+    vector<int> array;
+    int n, a, key, temp;
     cout<<"Enter Array Size: ";
-    int n, a, key;
     cin>>n;
     cout<<"Enter Array Element: ";
     for (int i = 0; i < n; i++)
@@ -12,20 +13,23 @@ int main()
         cin>>a;
         array.push_back(a);
     }
-    for (int i = 0; i < n-1; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n-1-i; j++)
+        key = i;
+        for (int j = i+1; j < n; j++)
         {
-            key = array[j+1];
-            if(array[j] > array[j+1]) 
+            if(array[key] > array[j])
             {
-                array[j+1] = array[j];
-                array[j] = key;
+                key = j;
             }
         }
+        temp = array[i];
+        array[i] = array[key];
+        array[key] = temp;
     }
-    cout<<"Bubble Sorting:";
+    cout<<"Selection Sorting:";
     for (int i = 0; i < n; i++)
         cout<<" "<<array[i];
     return 0;
+    
 }
