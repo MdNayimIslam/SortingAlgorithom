@@ -13,17 +13,16 @@ int main()
         cin>>a;
         v.push_back(a);
     }
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
-        for (int j = i+1; j < n; j++)
+        key = v[i];
+        int j = i-1;
+        while (key < v[j] && j>=0)
         {
-            key = v[j];
-            if(v[i] > v[j])
-            {
-                v[j] = v[i];
-                v[i] = key;
-            }
+            v[j+1] = v[j];
+            j--;
         }
+        v[j+1] = key;
     }
     cout<<"Sorting Array Element: ";
     for (int i = 0; i < n; i++)
